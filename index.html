@@ -1051,7 +1051,7 @@
                 <p>Try your luck at a game of trick and treat.</p>
             </div>
             <div class="tot-modal-footer">
-                <button class="tot-button" onclick="startTreatAnimation()">Yeah, let's play</button>
+                <button class="tot-button" onclick="totLuckyDraw()">Yeah, let's play</button>
                 <button class="tot-button" onclick="closeTotModal()">Nah, 2020 is scary enough</button>
             </div>
         </div>
@@ -1094,14 +1094,21 @@
                 console.log(window.localStorage.getItem('tot-played'));
             } else {
                 // not play show pop up
-                // $('.tot-modal#tot-intro').addClass('opened');
-                startTrickAnimation();
+                $('.tot-modal#tot-intro').addClass('opened');
+
             }
         })
         function closeTotModal() {
             $('.tot-modal#tot-intro').removeClass('opened');
         };
-
+        function totLuckyDraw() {
+            var num = Math.ceil(Math.random() * 10)
+            if (num > 6) {
+                startTreatAnimation()
+            } else {
+                startTrickAnimation();
+            }
+        }
         function assignImages() {
             var allCandyImages = document.querySelectorAll('.layer .candy');
             for (let i = 0; i < allCandyImages.length; i++) {
@@ -1115,7 +1122,7 @@
         }
         function startTreatAnimation() {
             // window.localStorage.setItem('tot-played', true);
-            $('.tot-container').addClass('shown');
+            $('#treat-container').addClass('shown');
             $('.tot-modal#tot-intro').removeClass('opened');
             setTimeout(function () {
                 $('.tot-modal#tot-treat').addClass('opened');
@@ -1171,7 +1178,11 @@
             return re.test(String(email).toLowerCase());
         };
         function startTrickAnimation() {
-
+            $('#trick-container').addClass('shown');
+            $('.tot-modal#tot-intro').removeClass('opened');
+            // setTimeout(function () {
+            //     $('.tot-modal#tot-treat').addClass('opened');
+            // }, 400);
             setTimeout(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
