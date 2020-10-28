@@ -1152,6 +1152,7 @@
                     var inactiveCandies = document.querySelectorAll('.candy-div:not(.active)');
 
                     inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                    inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
                     if (window.innerWidth < 768) {
                         inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
                         inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
@@ -1161,7 +1162,7 @@
                     if (inactiveCandies.length == 1) {
                         clearInterval(interval);
                     }
-                }, 10);
+                }, 5);
             }, 1000);
         }
         $("form").submit(function (e) {
@@ -1199,7 +1200,7 @@
 
         }
         function continueTrickFaster() {
-            var speed = 50;
+            var speed = 150;
             var trickinterval = setInterval(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
