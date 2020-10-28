@@ -135,7 +135,7 @@ body{
     transition: .5s;
     opacity: 0;
     height: 50px;
-    transform: scale(0) rotate(0deg);
+    transform: scale(0);
 }
 .candy{
     width: 70px;
@@ -147,19 +147,21 @@ body{
 }
 .candy-div.active{
 
-    -webkit-animation:pop-in 0.2s;
-    -moz-animation:pop-in 0.2s;
-    animation:pop-in 0.2s;
-    -ms-animation:pop-in 0.2s;
-    transform: scale(1) rotate(0deg);
+    -webkit-animation:pop-in 0.2s forwards;
+    -moz-animation:pop-in 0.2s forwards;
+    animation:pop-in 0.2s forwards;
+    -ms-animation:pop-in 0.2s forwards;
+    /* transform: scale(1); */
     opacity: 1;
 }
 @-webkit-keyframes pop-in {
     0% { opacity: 0; -webkit-transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.1); }
     100% { opacity: 1; -webkit-transform: scale(1); }
 }
 @-moz-keyframes pop-in {
     0% { opacity: 0; -moz-transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.1); }
     100% { opacity: 1; -moz-transform: scale(1); }
 }
 @keyframes pop-in {

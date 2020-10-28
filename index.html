@@ -1073,7 +1073,7 @@
             var allCandyImages = document.querySelectorAll('.layer .candy');
             for (let i = 0; i < allCandyImages.length; i++) {
                 const element = allCandyImages[i];
-                element.style.transform = "rotate(" + Math.ceil(Math.random() * 17 * 10) + "deg) scale(1)";
+                element.style.transform = "rotate(" + Math.ceil(Math.random() * 17 * 10) + "deg)";
                 element.src = './assets/candy/candy-' + (Math.ceil(Math.random() * 17) + '.png');
             }
         }
