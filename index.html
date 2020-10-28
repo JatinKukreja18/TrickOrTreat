@@ -14,8 +14,7 @@
     <!-- fake website div not to be copied -->
     <div class="fake-website"></div>
 
-    <div class="tot-container ">
-        <div class="modal"></div>
+    <div class="tot-container " id="treat-container">
         <div class="layer layer-1">
             <div class="candy-div"><img src="./assets/candy/candy-1.png" alt="" class="candy"></div>
             <div class="candy-div"><img src="./assets/candy/candy-2.png" alt="" class="candy"></div>
@@ -1009,6 +1008,39 @@
 
         </div>
     </div>
+    <div class="tot-container " id="trick-container">
+        <img class="trick-image" id="trick-image-2" src="./assets/trick/trick-2.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-5" src="./assets/trick/trick-5.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-16" src="./assets/trick/Gifs/trick-gif-6.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-4" src="./assets/trick/trick-4.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-3" src="./assets/trick/trick-3.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-9" src="./assets/trick/trick-9.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-6" src="./assets/trick/trick-6.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-7" src="./assets/trick/trick-7.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-8" src="./assets/trick/trick-8.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-22" src="./assets/trick/trick-16.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-20" src="./assets/trick/trick-14.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-10" src="./assets/trick/trick-10.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-18" src="./assets/trick/trick-12.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-1" src="./assets/trick/trick-1.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-12" src="./assets/trick/Gifs/trick-gif-2.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-13" src="./assets/trick/Gifs/trick-gif-3.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-14" src="./assets/trick/Gifs/trick-gif-4.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-17" src="./assets/trick/trick-11.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-15" src="./assets/trick/Gifs/trick-gif-5.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-11" src="./assets/trick/Gifs/trick-gif-1.gif" alt="" srcset="">
+        <img class="trick-image" id="trick-image-19" src="./assets/trick/trick-13.png" alt="" srcset="">
+        <div class="trick-image" id="trick-image-21">
+            <img class="rel" src="./assets/trick/trick-15.png" alt="" srcset="">
+            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
+            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
+            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
+            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
+        </div>
+        <div class="trick-image " id="trick-image-box">
+            <span id="trick-image-box-span"></span>
+        </div>
+    </div>
     <!-- Modal -->
     <div class="tot-modal" id="tot-intro" aria-hidden="true">
         <div class="tot-modal-dialog">
@@ -1062,7 +1094,8 @@
                 console.log(window.localStorage.getItem('tot-played'));
             } else {
                 // not play show pop up
-                $('.tot-modal#tot-intro').addClass('opened');
+                // $('.tot-modal#tot-intro').addClass('opened');
+                startTrickAnimation();
             }
         })
         function closeTotModal() {
@@ -1137,6 +1170,33 @@
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         };
+        function startTrickAnimation() {
+
+            setTimeout(function () {
+                inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
+                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+            }, 500);
+            setTimeout(function () {
+                inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
+                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+            }, 1000);
+            setTimeout(function () {
+                inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
+                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+                continueTrickFaster();
+            }, 1500);
+
+        }
+        function continueTrickFaster() {
+            var speed = 50;
+            var trickinterval = setInterval(function () {
+                inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
+                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+                if (inactiveTricks.length == 1) {
+                    clearInterval(trickinterval);
+                }
+            }, speed);
+        }
     </script>
 </body>
 
