@@ -135,6 +135,12 @@ body{
     transform: rotate(0deg);
     
 }
+.candy-div.shakes.active{
+    -webkit-animation:shakes 1.5s infinite;
+    -moz-animation:shakes 1.5s infinite;
+    animation:shakes 1.5s infinite;
+    -ms-animation:shakes 1.5s infinite;
+}
 .candy-div.active{
 
     -webkit-animation:pop-in 0.2s forwards;
@@ -158,6 +164,22 @@ body{
     0% { opacity: 0; transform: scale(0.5); }
     50% { opacity: 1; transform: scale(1.1); }
     100% { opacity: 1; transform: scale(1); }
+}
+/* shakes */
+@-webkit-keyframes shakes {
+    0% { opacity: 1; -webkit-transform: rotate(10deg) }
+    50% { opacity: 1; transform: rotate(80deg)}
+    100% { opacity: 1; -webkit-transform: rotate(10deg) }
+}
+@-moz-keyframes shakes {
+    0% { opacity: 1; -moz-transform: rotate(10deg) }
+    50% { opacity: 1; transform: rotate(80deg)}
+    100% { opacity: 1; -moz-transform: rotate(10deg); }
+}
+@keyframes shakes {
+    0% { opacity: 1; transform: rotate(10deg) }
+    50% { opacity: 1; transform:rotate(80deg) }
+    100% { opacity: 1; transform: rotate(10deg) }
 }
 
 
