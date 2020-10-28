@@ -503,6 +503,10 @@ body{
     }
 }
 @media only screen and (max-width: 544px){
+    #eye-tracker{
+        width: 70px;
+        cursor: pointer;
+    }
     #trick-image-10 {
         width: 55%;
         top: 0%;
