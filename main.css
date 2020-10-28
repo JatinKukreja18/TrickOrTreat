@@ -130,18 +130,21 @@ body{
 }
 .candy-div{
     width: 40px;
+    transition: .5s;
+    opacity: 0;
     height: 50px;
+    transform: scale(0) rotate(0deg);
 }
 .candy{
     width: 70px;
     /* height: 80px; */
     /* position: absolute; */
     /* background-color: dodgerblue; */
-    transform: scale(0) rotate(0deg);
-    transition: .5s;
-    opacity: 0;
+    transform: rotate(0deg);
+    
 }
-.candy.active{
+.candy-div.active{
+
     -webkit-animation:pop-in 0.2s;
     -moz-animation:pop-in 0.2s;
     animation:pop-in 0.2s;

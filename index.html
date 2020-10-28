@@ -1090,6 +1090,7 @@
             setTimeout(() => {
 
                 assignImages();
+
                 var allCandies = document.querySelectorAll('.candy');
                 // for (let i = 0; i < allCandies.length; i++) {
 
@@ -1108,7 +1109,7 @@
 
                     //     "<img class='candy active' src='./assets/candy/candy-" + Math.ceil(Math.random() * 17) + ".png'" +
                     //     " style='left:" + Math.ceil(Math.random() * window.innerWidth) + "px; top:" + Math.ceil(Math.random() * window.innerHeight) + "px; transform:rotate(" + Math.ceil(Math.random() * window.innerHeight) + "deg)'" + "/>";
-                    var inactiveCandies = document.querySelectorAll('.candy:not(.active)');
+                    var inactiveCandies = document.querySelectorAll('.candy-div:not(.active)');
 
                     inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
                     // inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].style.transform = "translate(" + Math.ceil(Math.random() * 20) + "px," + Math.ceil(Math.random() * 20) + "px)";
