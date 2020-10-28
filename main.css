@@ -6,7 +6,11 @@ body{
 @font-face {
     font-family: georgia bold;
     src: url(./assets/fonts/georgia\ bold.ttf);
-  }
+}
+@font-face {
+    font-family: "mondwest regular";
+    src: url(./assets/fonts/Mondwest-Regular.otf);
+}
 .fake-website{
     background-image: url('./assets/website-fake.png');
     background-size: 100% 100%;
@@ -66,7 +70,7 @@ body{
     }
     .tot-modal-body-container{
         padding: 20px 60px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #ffffff;
 
   }
@@ -74,12 +78,23 @@ body{
       text-align: center;
       color: #ff0000;
       font-size: 36px;
+      font-weight: 400;
       margin: 0 0 10px 0;
       font-family: georgia bold;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); */
   }
-  .toto-header span{
+  .toto-header .tot-red{
+      color: #ff0000;
+      text-transform: uppercase;
+  }
+  .toto-header .tot-pink{
+      text-transform: uppercase;
+      color: #ff00ec;
+  }
+  .toto-header span.tot-or{
+      font-family: "mondwest regular";
       font-size: 24px;
+      color: #000;
   }
   .tot-modal-body p {
       margin: 0 0 10px 0;
@@ -89,12 +104,14 @@ body{
       font-stretch: normal;
       font-style: normal;
       line-height: 1.21;
+      font-family: "mondwest regular";
       letter-spacing: normal;
       text-align: center;
       color: #000000;
   }
   .tot-modal-body input{
     padding: 3px 0;
+    -webkit-appearance: none;
     color: #000;
     background-color: transparent;
     outline: 0;

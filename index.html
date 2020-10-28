@@ -1050,7 +1050,8 @@
             </div>
             <div class="tot-modal-body">
                 <div class="tot-modal-body-container">
-                    <h1 class="toto-header">Trick <span>or</span> Treat</h1>
+                    <h1 class="toto-header"> <span class="tot-red">Trick</span> <span class="tot-or">or</span> <span
+                            class="tot-pink">Treat</span></h1>
                     <p>This Halloween, stand a chance to win exciting prizes!!!</br>
                         Try your luck at a game of Trick or Treat!.</p>
                     <div class="tot-modal-buttons">
@@ -1092,7 +1093,8 @@
                         and we’ll get in touch with you shortly.</p>
                     <form action="" id="tot-treat-form">
                         <input type="text" placeholder="Name*" name="fullname" required />
-                        <input type="text" placeholder="Email*" name="email" required />
+                        <input type="text" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Email*" name="email"
+                            required />
                         <input type="text" placeholder="Number" name="contact" />
                         <input type="text" placeholder="City" name="city" />
                         <input type="text" placeholder="Age" name="age" />
@@ -1121,12 +1123,15 @@
             $('.tot-modal#tot-intro').removeClass('opened');
         };
         function totLuckyDraw() {
-            // var num = Math.ceil(Math.random() * 10)
-            // if (num > 6) {
-            startTreatAnimation()
-            // } else {
-            //     startTrickAnimation();
-            // }
+            // Write your logic to call from backend here. based n the values call startTreatAnimation or  startTrickAnimation
+
+            // Below is a code for 50% possibility
+            var num = Math.ceil(Math.random() * 10)
+            if (num > 6) {
+                startTreatAnimation()
+            } else {
+                startTrickAnimation();
+            }
         }
         function assignImages() {
             var allCandyImages = document.querySelectorAll('.layer .candy');
@@ -1139,6 +1144,7 @@
         function getRndInteger(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
+        var treatinterval;
         function startTreatAnimation() {
             // window.localStorage.setItem('tot-played', true);
             $('#treat-container').addClass('shown');
@@ -1159,7 +1165,7 @@
                 //         allCandies[index].classList.add('active');
                 //     }, i * 100);
                 // }
-                var interval = setInterval(function () {
+                treatinterval = setInterval(function () {
 
                     // console.log(Math.ceil(Math.random() * 17 * 10))
                     // document.querySelector('.container').innerHTML =
@@ -1169,17 +1175,22 @@
                     //     "<img class='candy active' src='./assets/candy/candy-" + Math.ceil(Math.random() * 17) + ".png'" +
                     //     " style='left:" + Math.ceil(Math.random() * window.innerWidth) + "px; top:" + Math.ceil(Math.random() * window.innerHeight) + "px; transform:rotate(" + Math.ceil(Math.random() * window.innerHeight) + "deg)'" + "/>";
                     var inactiveCandies = document.querySelectorAll('.candy-div:not(.active)');
-
                     inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
-                    inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                    if (inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))]) {
+                        inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                    }
                     if (window.innerWidth < 768) {
-                        inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
-                        inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                        if (inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))]) {
+                            inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                        }
+                        if (inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))]) {
+                            inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                        }
 
                     }
                     // inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].style.transform = "translate(" + Math.ceil(Math.random() * 20) + "px," + Math.ceil(Math.random() * 20) + "px)";
                     if (inactiveCandies.length == 1) {
-                        clearInterval(interval);
+                        clearInterval(treatinterval);
                     }
                 }, 5);
             }, 1000);
@@ -1187,8 +1198,15 @@
         $("form").submit(function (e) {
             console.log(this);
             e.preventDefault()
-            alert("Submitted");
-            validateForm(this);
+            if (this.checkValidity()) {
+                clearInterval(treatinterval);
+                var detailsArray = $('#tot-treat-form').serializeArray()
+                //    use this to send data to the backend 
+                console.log(detailsArray);
+                // close pop up after saving 
+                $('.tot-modal#tot-treat').removeClass('opened');
+                $('#treat-container').removeClass('shown');
+            }
         });
         function validateForm(form) {
             console.log(form);
@@ -1200,32 +1218,37 @@
         function startTrickAnimation() {
             $('#trick-container').addClass('shown');
             $('.tot-modal#tot-intro').removeClass('opened');
-            setTimeout(function () {
-                $('.tot-modal#tot-trick').addClass('opened');
-            }, 400);
+
             setTimeout(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
-            }, 500);
+            }, 300);
             setTimeout(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
-                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
-            }, 1000);
+                if (inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))]) {
+                    inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+                }
+            }, 600);
             setTimeout(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
-                inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+                if (inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))]) {
+                    inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
+                }
                 continueTrickFaster();
-            }, 1500);
+            }, 900);
 
         }
         function continueTrickFaster() {
-            var speed = 150;
+            var speed = 80;
             var trickinterval = setInterval(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
                 if (inactiveTricks.length == 1) {
                     clearInterval(trickinterval);
                     placeEye()
+                    setTimeout(function () {
+                        $('.tot-modal#tot-trick').addClass('opened');
+                    }, 400);
                 }
             }, speed);
         }
