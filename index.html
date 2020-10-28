@@ -1037,9 +1037,6 @@
             <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
             <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
         </div>
-        <div class="trick-image " id="trick-image-box">
-            <span id="trick-image-box-span"></span>
-        </div>
         <div id="eye-tracker" onclick="getMeOutOfHere()">
             <img src="./assets/trick/Gifs/eye/eye.gif" alt="" srcset="">
         </div>
@@ -1048,43 +1045,62 @@
     <div class="tot-modal" id="tot-intro" aria-hidden="true">
         <div class="tot-modal-dialog">
             <div class="tot-modal-header">
-                <h2>Trick or Treat</h2>
+                <h2>Bhaane</h2>
+                <a class="tot-modal-cross"></a>
             </div>
             <div class="tot-modal-body">
-                <p>Try your luck at a game of trick and treat.</p>
-            </div>
-            <div class="tot-modal-footer">
-                <button class="tot-button" onclick="totLuckyDraw()">Yeah, let's play</button>
-                <button class="tot-button" onclick="closeTotModal()">Nah, 2020 is scary enough</button>
+                <div class="tot-modal-body-container">
+                    <h1 class="toto-header">Trick <span>or</span> Treat</h1>
+                    <p>This Halloween, stand a chance to win exciting prizes!!!</br>
+                        Try your luck at a game of Trick or Treat!.</p>
+                    <div class="tot-modal-buttons">
+                        <button class="tot-button" onclick="totLuckyDraw()">LET’S PLAY!</button>
+                        <button class="tot-button" onclick="closeTotModal()">EXIT</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="tot-modal" id="tot-trick" aria-hidden="true">
         <div class="tot-modal-dialog">
             <div class="tot-modal-header">
-                <h1>You got Tricked</h1>
+                <h2>Bhaane</h2>
+                <a class="tot-modal-cross"></a>
             </div>
-            <!-- <div class="tot-modal-body">
-                <p>Try your luck at a game of trick and treat.</p>
-            </div> -->
+            <div class="tot-modal-body">
+                <div class="tot-modal-body-container">
+                    <h1 class="toto-header">*YOU GOT TRICKED!*</h1>
+                    <span class="tot-modal-separator"></span>
+                    <p>Find and click on the eye ball
+                        to continue shopping</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="tot-modal" id="tot-treat" aria-hidden="true">
         <div class="tot-modal-dialog">
             <div class="tot-modal-header">
-                <h1>You won a treat!</h1>
+                <h1>Bhaane</h1>
+                <a class="tot-modal-cross"></a>
+
             </div>
             <div class="tot-modal-body">
-                <p>Fill in the details below and we'll get in touch</p>
-                <form action="" id="tot-treat-form">
-                    <input type="text" placeholder="Name*" name="fullname" required />
-                    <input type="text" placeholder="Email*" name="email" required />
-                    <input type="text" placeholder="Number" name="contact" />
-                    <input type="text" placeholder="City" name="city" />
-                    <input type="text" placeholder="Age" name="age" />
-                    <input type="text" placeholder="Instagram handle" name="ighandle" />
-                    <button type="submit" class="tot-button tot-submit">Submit</button>
-                </form>
+                <div class="tot-modal-body-container">
+                    <h1 class="toto-header">YOU WON A TREAT!!!</h1>
+                    <span class="tot-modal-separator"></span>
+                    <p class="treat-text">Yay!!! Fill in the details below
+                        and we’ll get in touch with you shortly.</p>
+                    <form action="" id="tot-treat-form">
+                        <input type="text" placeholder="Name*" name="fullname" required />
+                        <input type="text" placeholder="Email*" name="email" required />
+                        <input type="text" placeholder="Number" name="contact" />
+                        <input type="text" placeholder="City" name="city" />
+                        <input type="text" placeholder="Age" name="age" />
+                        <div class="tot-modal-buttons">
+                            <button type="submit" class="tot-button tot-submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -1105,12 +1121,12 @@
             $('.tot-modal#tot-intro').removeClass('opened');
         };
         function totLuckyDraw() {
-            var num = Math.ceil(Math.random() * 10)
-            if (num > 6) {
-                startTreatAnimation()
-            } else {
-                startTrickAnimation();
-            }
+            // var num = Math.ceil(Math.random() * 10)
+            // if (num > 6) {
+            startTreatAnimation()
+            // } else {
+            //     startTrickAnimation();
+            // }
         }
         function assignImages() {
             var allCandyImages = document.querySelectorAll('.layer .candy');
@@ -1184,9 +1200,9 @@
         function startTrickAnimation() {
             $('#trick-container').addClass('shown');
             $('.tot-modal#tot-intro').removeClass('opened');
-            // setTimeout(function () {
-            //     $('.tot-modal#tot-treat').addClass('opened');
-            // }, 400);
+            setTimeout(function () {
+                $('.tot-modal#tot-trick').addClass('opened');
+            }, 400);
             setTimeout(function () {
                 inactiveTricks = document.querySelectorAll('.trick-image:not(.active)');
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
@@ -1232,6 +1248,7 @@
         function getMeOutOfHere() {
             clearInterval(eyeinterval);
             $('#trick-container').removeClass('shown');
+            $('.tot-modal#tot-trick').removeClass('opened');
 
         }
     </script>

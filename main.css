@@ -3,7 +3,10 @@ body{
     padding: 0;
     /* overflow: hidden; */
 }
-
+@font-face {
+    font-family: georgia bold;
+    src: url(./assets/fonts/georgia\ bold.ttf);
+  }
 .fake-website{
     background-image: url('./assets/website-fake.png');
     background-size: 100% 100%;
@@ -15,7 +18,7 @@ body{
 }
 /* general styles */
 .tot-button{
-    width: 100%;
+    /* width: 100%; */
     height: 40px;
     border: 1px solid #aaa;
     color: #000;
@@ -34,8 +37,10 @@ body{
     /* left: 50%; */
   }
   .tot-modal-dialog {
-    background: #fefefe;
+    
     border: #333333 solid 0px;
+    border-radius: 3px;
+    border: solid 4px #808080;
     /* border-radius: 5px; */
     /* margin-left: -200px; */
     /* text-align:center; */
@@ -45,7 +50,7 @@ body{
     top: 50%;
     transform-origin: top left;
     z-index: 11;
-    width: 360px;
+    width: 550px;
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
     -webkit-transform: scale(0) translate(-50%,-50%);
     -ms-transform: scale(0) translate(-50%,-50%);
@@ -56,15 +61,42 @@ body{
     transition: transform 0.3s ease-out;
   }
   .tot-modal-body {
-    padding: 20px;
+      background: #c1c1c1;
+      padding: 4px;
+    }
+    .tot-modal-body-container{
+        padding: 20px 60px;
+    border-radius: 10px;
+    background-color: #ffffff;
+
+  }
+  .toto-header{
+      text-align: center;
+      color: #ff0000;
+      font-size: 36px;
+      margin: 0 0 10px 0;
+      font-family: georgia bold;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  .toto-header span{
+      font-size: 24px;
   }
   .tot-modal-body p {
       margin: 0 0 10px 0;
       font-size: 14px;
+      font-size: 19px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      text-align: center;
+      color: #000000;
   }
   .tot-modal-body input{
-    padding: 8px 0;
+    padding: 3px 0;
     color: #000;
+    background-color: transparent;
     outline: 0;
     font-size: 14px;
     font-weight: 400;
@@ -74,23 +106,134 @@ body{
     margin-bottom: 10px;
     width: 100%;
   }
+  .tot-modal-body input::placeholder{
+      color: #000;
+  }
   .tot-modal-header h2{
       margin-bottom: 0;
   }
-  .tot-modal-header,
+  .tot-modal-header{
+    max-height: 38px;
+    box-shadow: inset 0 0 2px 2px rgba(0, 9, 97, 0.58);
+    background-color: #0413a4; 
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 4px #808080;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .tot-modal-cross{
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    cursor: pointer;
+    border-radius: 1px;
+    border: 2px solid #808080;
+    padding: 1px;
+    background-color: #c1c1c1;
+}
+
+.tot-modal-cross::after,
+.tot-modal-cross::before{
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 10px;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    transition: .3s;
+}
+
+/* 
+.tot-modal-cross{
+    border: none;
+} */
+.tot-modal-cross::before{
+    transform: rotate(45deg) scale(1.4);
+    transform-origin: center;
+}
+.tot-modal-cross::after{
+    transform: rotate(-45deg) scale(1.4);
+    transform-origin: center;
+}
+
   .tot-modal-footer {
     padding: 10px 20px;
   }
-  .tot-submit{
+  /* .tot-submit{
       margin-top: 20px;
-  }
+  } */
   /* .tot-modal-header {
     border-bottom: #eeeeee solid 1px;
   } */
   .tot-modal-header h2 {
-    font-size: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
   }
-
+  .tot-modal-buttons{
+      display: flex;
+      margin-top: 25px;
+      align-items: center;
+      justify-content: center;
+  }
+  .tot-button{
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.91);
+    border: solid 1px #979797;
+    background-color: #f1f1f1;
+    margin-right: 20px;
+    min-height: 60px;
+    min-width: 180px;
+    cursor: pointer;
+  }
+  #tot-trick .tot-modal-body-container{
+      background-color: #f2ea79;
+      min-height: 243px;
+      box-sizing: border-box;
+  }
+  #tot-treat .tot-modal-body-container{
+    background-color: #ffc7c7;
+    min-height: 243px;
+    box-sizing: border-box;
+}
+#tot-treat .toto-header{
+    color: #ff00ec;
+}
+    .treat-text,.tot-modal-body .treat-text{
+        width: 278px;
+    font-family: Mondwest;
+    font-size: 19px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.16;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    }
+  .tot-modal-separator{
+    width: 344px;
+    height: 1px;
+    border-bottom: dashed 1px #808080;
+    display: block;
+    /* padding: 0 90px; */
+    box-sizing: border-box;
+    margin: 15px auto 19px auto;
+    max-width: 100%;
+  }
 /* Treat CSS     */
 .tot-container{
     position: fixed;
@@ -135,11 +278,12 @@ body{
     transform: rotate(0deg);
     
 }
-.candy-div.shakes.active{
-    -webkit-animation:shakes 1.5s infinite;
-    -moz-animation:shakes 1.5s infinite;
-    animation:shakes 1.5s infinite;
-    -ms-animation:shakes 1.5s infinite;
+.candy-div.shakes.active img{
+    -webkit-animation:shakes 2s infinite;
+    -moz-animation:shakes 2s infinite;
+    animation:shakes 2s infinite;
+    -ms-animation:shakes 2s infinite;
+    transform-origin: center;
 }
 .candy-div.active{
 
@@ -168,18 +312,23 @@ body{
 /* shakes */
 @-webkit-keyframes shakes {
     0% { opacity: 1; -webkit-transform: rotate(10deg) }
-    50% { opacity: 1; transform: rotate(80deg)}
+    30% { opacity: 1; transform: rotate(80deg)}
+    60% { opacity: 1; -webkit-transform: rotate(10deg) }
     100% { opacity: 1; -webkit-transform: rotate(10deg) }
 }
 @-moz-keyframes shakes {
     0% { opacity: 1; -moz-transform: rotate(10deg) }
-    50% { opacity: 1; transform: rotate(80deg)}
-    100% { opacity: 1; -moz-transform: rotate(10deg); }
+    30% { opacity: 1; transform: rotate(80deg) }
+    60% { opacity: 1; -moz-transform: rotate(10deg); }
+    100% { opacity: 1; -webkit-transform: rotate(10deg) }
+
 }
 @keyframes shakes {
-    0% { opacity: 1; transform: rotate(10deg) }
-    50% { opacity: 1; transform:rotate(80deg) }
-    100% { opacity: 1; transform: rotate(10deg) }
+    0% { opacity: 1; transform: rotate(10deg) scale(1.1)}
+    30% { opacity: 1; transform:rotate(80deg)scale(1.2) }
+    60% { opacity: 1; transform: rotate(10deg) scale(1)}
+    100% { opacity: 1; -webkit-transform: rotate(10deg) }
+
 }
 
 
@@ -198,6 +347,27 @@ body{
 }
 
 @media only screen and (max-width: 767px){
+    .tot-modal-buttons{
+        flex-direction: column;
+        align-items: center;
+    }
+    .tot-button{
+        margin: 0;
+        margin-bottom: 10px;
+        min-width: 111px;
+        max-width: 111px;
+        min-height: 37px;
+    }
+    .tot-modal-dialog{
+        width: 301px;
+    }
+    .tot-modal-body-container{
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .toto-header{
+        font-size: 24px;
+    }
     .candy-div{
         width: 40px;
         height: 50px;
