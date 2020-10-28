@@ -3,6 +3,7 @@ body{
     padding: 0;
     /* overflow: hidden; */
 }
+
 @font-face {
     font-family: georgia bold;
     src: url(./assets/fonts/georgia\ bold.ttf);
@@ -113,6 +114,9 @@ body{
     padding: 3px 0;
     -webkit-appearance: none;
     color: #000;
+    
+        border-radius: 0;
+    
     background-color: transparent;
     outline: 0;
     font-size: 14px;
