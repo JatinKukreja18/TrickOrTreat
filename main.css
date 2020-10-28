@@ -266,7 +266,7 @@ body{
 #trick-image-6{
     
     width: 36%;
-    top: 11%;
+    top: 0%;
     right: 30%;
 }
 #trick-image-7{
@@ -278,13 +278,13 @@ body{
 #trick-image-8{
     
     width: 19%;
-    top: 9.5%;
+    top: 0%;
     left: -15px;
 }
 #trick-image-9{
     
     width: 20%;
-    top: 9%;
+    top: 0%;
     left: 17%;
 }
 #trick-image-10{
@@ -326,7 +326,7 @@ body{
 #trick-image-16{
     
     width: 14%;
-    top: 9%;
+    top: 5%;
     right: 0;
 }
 #trick-image-17{
@@ -441,7 +441,23 @@ body{
 }
 
 #trick-container{
+    display: none;
+}
+#trick-container.shown,
+#treat-container.shown{
     display: block;
+}
+#eye-tracker{
+    width: 100px;
+    cursor: pointer;
+}
+#eye-tracker img{
+    transform: scale(0);
+    transition: .2s;
+    width: 100%;
+}
+#eye-tracker.show img{
+    transform: scale(1);
 }
 @media only screen and (min-width: 545px) and (max-width: 1100px){
     .trick-image{
@@ -449,7 +465,7 @@ body{
     }
     #trick-image-20{
         top: 66%;
-    left: 0%;
+        left: 0%;
     }
     #trick-image-9{
         left: 28%;
@@ -463,15 +479,33 @@ body{
         top: 56%;
         right: -0.5%;
     }
+    #trick-image-10 {
+        width: 39%;
+        top: 26%;
+        left: -17px;
+    }
+    #trick-image-16 {
+        width: 40%;
+        top: 1%;
+        right: 0;
+    }
+    #trick-image-4 {
+        width: 42%;
+        top: 31%;
+        right: -15px;
+    }
 }
-@media only screen and (max-width: 544px){
+        
+@media only screen and (max-width: 767px){
     #trick-image-box{
         width: 300px;
         height: 181px;
     }
+}
+@media only screen and (max-width: 544px){
     #trick-image-10 {
         width: 55%;
-        top: 8%;
+        top: 0%;
         left: -17px;
     }
     #trick-image-2 {
@@ -501,7 +535,7 @@ body{
     }
     #trick-image-9 {
         width: 55%;
-        top: 9%;
+        top: 0;
         left: 50%;
     }
     #trick-image-6 {
@@ -531,7 +565,7 @@ body{
     }
     #trick-image-18 {
         width: 65.5%;
-        bottom: 0;
+        bottom: 60%;
         left: 18%;
     }
     #trick-image-1 {

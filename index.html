@@ -1040,6 +1040,9 @@
         <div class="trick-image " id="trick-image-box">
             <span id="trick-image-box-span"></span>
         </div>
+        <div id="eye-tracker" onclick="getMeOutOfHere()">
+            <img src="./assets/trick/Gifs/eye/eye.gif" alt="" srcset="">
+        </div>
     </div>
     <!-- Modal -->
     <div class="tot-modal" id="tot-intro" aria-hidden="true">
@@ -1206,8 +1209,30 @@
                 inactiveTricks[(Math.floor(Math.random() * inactiveTricks.length))].classList.add('active');
                 if (inactiveTricks.length == 1) {
                     clearInterval(trickinterval);
+                    placeEye()
                 }
             }, speed);
+        }
+        var eyeinterval;
+        function placeEye() {
+            var eye = document.querySelector('#eye-tracker')
+            eye.classList.add('show');
+            var speed = 4500;
+            eyeinterval = setInterval(function () {
+                console.log('here');
+                eye.classList.remove('show');
+                setTimeout(function () {
+
+                    eye.style.transform = "scale(1) translate(" + (Math.floor(Math.random() * window.innerWidth)) + "px , " + (Math.floor(Math.random() * window.innerHeight)) + "px)";
+                    eye.classList.add('show');
+                }, 1000)
+            }, speed);
+
+        }
+        function getMeOutOfHere() {
+            clearInterval(eyeinterval);
+            $('#trick-container').removeClass('shown');
+
         }
     </script>
 </body>
