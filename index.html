@@ -1112,6 +1112,11 @@
                     var inactiveCandies = document.querySelectorAll('.candy-div:not(.active)');
 
                     inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                    if (window.innerWidth < 768) {
+                        inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+                        inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].classList.add('active');
+
+                    }
                     // inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].style.transform = "translate(" + Math.ceil(Math.random() * 20) + "px," + Math.ceil(Math.random() * 20) + "px)";
                     if (inactiveCandies.length == 1) {
                         clearInterval(interval);
