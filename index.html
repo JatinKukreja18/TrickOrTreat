@@ -1168,6 +1168,8 @@
             setTimeout(function () {
                 $('.tot-modal#tot-treat').addClass('opened');
             }, 400);
+            // fireworks added
+
             setTimeout(() => {
                 assignImages();
                 treatinterval = setInterval(function () {
@@ -1192,26 +1194,28 @@
                         clearInterval(treatinterval);
                     }
                 }, 5);
-                // fireworks added
                 randomiseFireworks();
+                setInterval(function () {
+                    randomiseFireworks();
+                }, 5000);
 
             }, 1000);
         }
         function randomiseFireworks() {
-            setInterval(function () {
-                $('.firework-layer .tot-fw-img.show').removeClass('show');
-                fireworkinterval = setInterval(function () {
-                    var inactiveFireworks = document.querySelectorAll('.firework-layer .tot-fw-img:not(.show)');
-                    var currentIndexFw = (Math.floor(Math.random() * inactiveFireworks.length));
-                    if (inactiveFireworks[currentIndexFw]) {
-                        inactiveFireworks[currentIndexFw].style.transform = "scale(1) translate(" + (Math.floor(Math.random() * window.innerWidth)) + "px , " + (Math.floor(Math.random() * window.innerHeight)) + "px)";
-                        inactiveFireworks[currentIndexFw].classList.add('show');
-                    }
-                    if (inactiveFireworks.length == 1) {
-                        clearInterval(fireworkinterval);
-                    }
-                }, 50);
-            }, 5000);
+
+            $('.firework-layer .tot-fw-img.show').removeClass('show');
+            fireworkinterval = setInterval(function () {
+                var inactiveFireworks = document.querySelectorAll('.firework-layer .tot-fw-img:not(.show)');
+                var currentIndexFw = (Math.floor(Math.random() * inactiveFireworks.length));
+                if (inactiveFireworks[currentIndexFw]) {
+                    inactiveFireworks[currentIndexFw].style.transform = "scale(1) translate(" + (Math.floor(Math.random() * window.innerWidth)) + "px , " + (Math.floor(Math.random() * window.innerHeight)) + "px)";
+                    inactiveFireworks[currentIndexFw].classList.add('show');
+                }
+                if (inactiveFireworks.length == 1) {
+                    clearInterval(fireworkinterval);
+                }
+            }, 50);
+
         }
         $("#tot-treat-form").submit(function (e) {
             console.log(this);

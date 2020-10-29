@@ -232,7 +232,7 @@ body{
 }
     .treat-text,.tot-modal-body .treat-text{
         width: 278px;
-    font-family: Mondwest;
+    font-family: "mondwest regular";
     font-size: 19px;
     font-weight: normal;
     font-stretch: normal;
@@ -357,7 +357,7 @@ body{
 }
 .firework-layer .tot-fw-img{
     transform:  translate(0,0);
-    width: 150px;
+    width: 180px;
     position: absolute;
 }
 .firework-layer .tot-fw-img img{
@@ -384,10 +384,10 @@ body{
 
 @media only screen and (max-width: 767px){
     .firework-layer .tot-fw-img{
-        width: 100px;
+        width: 120px;
     }
     .tot-modal-body p,.treat-text, .tot-modal-body .treat-text{
-        font-size: 12px;
+        font-size: 14px;
         width: 100%;
     }
     .tot-modal-buttons{
