@@ -297,6 +297,7 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
+    transform-origin: top;
     }
 .layer-1{
     z-index: 1;
@@ -515,7 +516,7 @@ body{
 #trick-image-5{
     
     width: 21.5%;
-    top: 25%;
+    top: 22%;
     right: 15%;
 }
 #trick-image-6{
@@ -533,13 +534,14 @@ body{
 #trick-image-8{
     
     width: 19%;
-    top: 0%;
+    top: -15px;
     left: -15px;
 }
 #trick-image-9{
     
     width: 20%;
-    top: 0%;
+    top: -20px;
+
     left: 17%;
 }
 #trick-image-10{
@@ -581,7 +583,7 @@ body{
 #trick-image-16{
     
     width: 14%;
-    top: 5%;
+    top: 0%;
     right: 0;
 }
 #trick-image-17{
@@ -593,8 +595,8 @@ body{
 #trick-image-18{
     
     width: 22.5%;
-    bottom: 0;
-    left: 18%;
+    top: 0;
+    right: 18%;
 }
 #trick-image-19{
     
@@ -676,6 +678,86 @@ body{
     left: 40px;
     top: 40px;
 }
+#trick-image-43{
+    right: 50%;
+    width: 16%;
+    top: -50px;
+}
+#trick-image-42 {
+    left: 0;
+    width: 16%;
+    bottom: -50px;
+}
+#trick-image-41 {
+    right: 0;
+    width: 10%;
+    bottom: 0;
+}
+#trick-image-40 {
+    right: 50%;
+    width: 8%;
+    bottom: 20%;
+}
+#trick-image-39 {
+    left: 0;
+    width: 13%;
+    top: 0;
+}
+#trick-image-38 {
+    right: 27%;
+    width: 7%;
+    bottom: 40%;
+}
+#trick-image-37 {
+    right: 40%;
+    width: 8%;
+    top: 0;
+}
+#trick-image-36 {
+    right: 48%;
+    width: 19%;
+    top: 20%;
+}
+#trick-image-35 {
+    right: 30%;
+    width: 18%;
+    top: 0;
+}
+#trick-image-34 {
+    left: 0;
+    width: 35%;
+    top: 20%;
+}
+#trick-image-33 {
+    right: 65%;
+    width: 21%;
+    bottom: 16%;
+}
+#trick-image-32 {
+    right: 44%;
+    width: 18%;
+    top: 8%;
+}
+#trick-image-31 {
+    right: 0;
+    width: 21%;
+    bottom: 20%;
+}
+#trick-image-30 {
+    right: 39%;
+    width: 18%;
+    bottom: 39%;
+}
+#trick-image-29 {
+    right: 19%;
+    width: 19%;
+    bottom: 6%;
+}
+#trick-image-28{
+    width: 18%;
+    right: 9%;
+    top: 0%;
+}
 #trick-image-box{
     width: 544px;
   height: 283px;
@@ -731,6 +813,9 @@ body{
 #trick-container.shown,
 #treat-container.shown{
     display: block;
+}
+#treat-container.shown{
+    h
 }
 #eye-tracker{
     width: 100px;
