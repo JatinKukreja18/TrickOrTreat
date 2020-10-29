@@ -1124,6 +1124,21 @@
             </div>
         </div>
     </div>
+    <div class="tot-modal tot-notification " id="tot-notification" aria-hidden="true">
+        <div class="tot-modal-dialog">
+            <div class="tot-modal-header">
+                <h2>Bhaane</h2>
+                <a onclick="$('#tot-notification').removeClass('opened')" class="tot-modal-cross"></a>
+
+            </div>
+            <div class="tot-modal-body">
+                <div class="tot-modal-body-container">
+                    <p id="tot-toaster-message">Yay!!! Fill in the details below
+                        and we’ll get in touch with you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- /Modal -->
 
     <script>
@@ -1140,12 +1155,12 @@
         function totLuckyDraw() {
             // Write your logic to call from backend here. based n the values call startTreatAnimation or  startTrickAnimation
             // Below is a code for 50% possibility
-            // var num = Math.ceil(Math.random() * 10)
-            // if (num > 6) {
-            startTreatAnimation()
-            // } else {
-            //     startTrickAnimation();
-            // }
+            var num = Math.ceil(Math.random() * 10)
+            if (num > 6) {
+                startTreatAnimation()
+            } else {
+                startTrickAnimation();
+            }
         };
         function assignImages() {
             var allCandyImages = document.querySelectorAll('.layer .candy');
@@ -1304,6 +1319,22 @@
                 $('.tot-modal#tot-intro').removeClass('opened');
             }
             $('body').css('overflow', 'auto');
+
+            NotificationService(value);
+        }
+
+        function NotificationService(type) {
+            var message = '';
+            if (type == 'treat') {
+                message = 'Thank you for filling up your details. We will get in touch with you shortly!'
+            } else if (type == 'trick') {
+                message = 'Your suprise discount will be available at checkout!'
+            }
+            document.querySelector('#tot-toaster-message').innerHTML = message
+            $('#tot-notification').addClass('opened')
+            setTimeout(function () {
+                $('#tot-notification').removeClass('opened')
+            }, 8000);
         }
     </script>
 </body>

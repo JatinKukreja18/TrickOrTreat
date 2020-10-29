@@ -41,8 +41,27 @@ body{
     transform: scale(1) translate(-50%,-50%);
     /* left: 50%; */
   }
+  .tot-notification.opened .tot-modal-dialog{
+    -webkit-transform: translate(-280px,0%);
+    -ms-transform: translate(-280px,0%);
+    transform: translate(-280px,0%); 
+  }
+  .tot-notification .tot-modal-dialog{
+    left: 100%;
+    top: 60px;
+    width: 250px;
+    -webkit-transform: translate(0,0%);
+    -ms-transform: translate(0,0%);
+    transform: translate(0,0%); 
+  }
+  .tot-notification.tot-modal .tot-modal-body-container{
+      padding: 20px;
+  }
+  .tot-notification.tot-modal .tot-modal-body p
+  {
+    font-size: 14px;
+  }
   .tot-modal-dialog {
-    
     border: #333333 solid 0px;
     border-radius: 3px;
     border: solid 4px #808080;
