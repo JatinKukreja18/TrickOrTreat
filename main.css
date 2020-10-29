@@ -718,6 +718,10 @@ body{
         width: 300px;
         height: 181px;
     }
+    #tot-trick .tot-modal-body-container{
+        height: auto;
+        min-height: auto;
+    }
 }
 @media only screen and (max-width: 544px){
     #eye-tracker{
