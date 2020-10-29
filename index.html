@@ -1047,13 +1047,15 @@
         <img class="trick-image" id="trick-image-15" src="./assets/trick/Gifs/trick-gif-5.gif" alt="" srcset="">
         <img class="trick-image" id="trick-image-11" src="./assets/trick/Gifs/trick-gif-1.gif" alt="" srcset="">
         <img class="trick-image" id="trick-image-19" src="./assets/trick/trick-13.png" alt="" srcset="">
-        <div class="trick-image" id="trick-image-21">
-            <img class="rel" src="./assets/trick/trick-15.png" alt="" srcset="">
-            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
-            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
-            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
-            <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
-        </div>
+        <img class="trick-image" id="trick-image-23" src="./assets/trick/trick-17.png" alt="" srcset="">
+
+        <!-- <div class="trick-image" id="trick-image-21"> -->
+        <img class="trick-image" id="trick-image-21" src="./assets/trick/trick-15.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-24" src="./assets/trick/trick-15.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-25" src="./assets/trick/trick-15.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-26" src="./assets/trick/trick-15.png" alt="" srcset="">
+        <img class="trick-image" id="trick-image-27" src="./assets/trick/trick-15.png" alt="" srcset="">
+        <!-- </div> -->
         <div id="eye-tracker" onclick="getMeOutOfHere('trick',true)">
             <img src="./assets/trick/Gifs/eye/eye.gif" alt="" srcset="">
         </div>
@@ -1183,7 +1185,6 @@
             setTimeout(function () {
                 $('.tot-modal#tot-treat').addClass('opened');
             }, 400);
-            // fireworks added
 
             setTimeout(() => {
                 assignImages();
@@ -1207,12 +1208,13 @@
                     // inactiveCandies[(Math.floor(Math.random() * inactiveCandies.length))].style.transform = "translate(" + Math.ceil(Math.random() * 20) + "px," + Math.ceil(Math.random() * 20) + "px)";
                     if (inactiveCandies.length == 1) {
                         clearInterval(treatinterval);
+                        randomiseFireworks();
+                        setInterval(function () {
+                            randomiseFireworks();
+                        }, 8000);
                     }
                 }, 5);
-                randomiseFireworks();
-                setInterval(function () {
-                    randomiseFireworks();
-                }, 5000);
+
 
             }, 1000);
         }

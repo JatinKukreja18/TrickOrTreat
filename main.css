@@ -48,7 +48,7 @@ body{
   }
   .tot-notification .tot-modal-dialog{
     left: 100%;
-    top: 60px;
+    top: 80px;
     width: 250px;
     -webkit-transform: translate(0,0%);
     -ms-transform: translate(0,0%);
@@ -278,11 +278,11 @@ body{
 /* Treat CSS     */
 .tot-container{
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;    
     min-width: 100vw;
     display: none;
-    min-height: 100vh;
+    min-height: calc(100vh - 70px)  ;
 }
 .tot-container.shown{
     display: block;
@@ -503,7 +503,7 @@ body{
 #trick-image-3{
     bottom:0;
     
-    width: 19.5%;
+    width: 24.5%;
     right: 0;
 }
 #trick-image-4{
@@ -515,7 +515,7 @@ body{
 #trick-image-5{
     
     width: 21.5%;
-    top: 33%;
+    top: 25%;
     right: 15%;
 }
 #trick-image-6{
@@ -545,7 +545,7 @@ body{
 #trick-image-10{
     
     width: 20%;
-    top: 37%;
+    top: 30%;
     left: -17px;
 }
 #trick-image-11{
@@ -604,8 +604,8 @@ body{
 }
 #trick-image-20{
     
-    width: 25.5%;
-    top: 52%;
+    width: 29.5%;
+    top: 49%;
     left: 12%;
 }
 
@@ -613,14 +613,44 @@ body{
     
     width: 29.5%;
     bottom: 0%;
-    left: 36.5%;
+    left: 38.5%;
 }
 
+#trick-image-24{
+    
+    width: 29.5%;
+    bottom: calc(0% - 10px);
+    left: calc(38.5% + 10px);
+}
+#trick-image-25{
+    
+    width: 29.5%;
+    bottom: calc(0% - 20px);
+    left: calc(38.5% + 20px);
+}
+#trick-image-26{
+    
+    width: 29.5%;
+    bottom: calc(0% - 30px);
+    left: calc(38.5% + 30px);
+}
+#trick-image-27{
+    
+    width: 29.5%;
+    bottom: calc(0% - 40px);
+    left: calc(38.5% + 40px);
+}
 #trick-image-22{
 
-    width: 26.5%;
+    width: 32.5%;
     bottom: 0;
     left: 33%;
+}
+
+#trick-image-23{
+    width: 15.5%;
+    top: 10%;
+    right: -22px;
 }
 #trick-image-21 .rel{
     position: relative;
