@@ -504,7 +504,7 @@ body{
 #trick-image-3{
     bottom:0;
     
-    width: 24.5%;
+    width: 20.5%;
     right: 0;
 }
 #trick-image-4{
@@ -528,7 +528,7 @@ body{
 #trick-image-7{
     
     width: 15.54%;
-    top: 45%;
+    top: 50%;
     left: 17%;
 }
 #trick-image-8{
@@ -600,9 +600,9 @@ body{
 }
 #trick-image-19{
     
-    width: 9.5%;
+    width: 7.5%;
     bottom: 0;
-    left: 25%;
+    left: 19%;
 }
 #trick-image-20{
     
@@ -651,7 +651,7 @@ body{
 
 #trick-image-23{
     width: 15.5%;
-    top: 10%;
+    top: 5%;
     right: -22px;
 }
 #trick-image-21 .rel{
@@ -704,14 +704,14 @@ body{
     top: 0;
 }
 #trick-image-38 {
-    right: 27%;
-    width: 7%;
-    bottom: 40%;
+    right: 0%;
+    width: 9%;
+    bottom: 0%;
 }
 #trick-image-37 {
-    right: 40%;
-    width: 8%;
-    top: 0;
+    left: 9%;
+    width: 16%;
+    top: 12%;
 }
 #trick-image-36 {
     right: 48%;
@@ -740,8 +740,8 @@ body{
 }
 #trick-image-31 {
     right: 0;
-    width: 21%;
-    bottom: 20%;
+    width: 9%;
+    bottom: 18%;
 }
 #trick-image-30 {
     right: 39%;
@@ -749,9 +749,10 @@ body{
     bottom: 39%;
 }
 #trick-image-29 {
-    right: 19%;
+    /* right: 19%; */
+    left: 32%;
     width: 19%;
-    bottom: 6%;
+    top: 5%;
 }
 #trick-image-28{
     width: 18%;
@@ -874,7 +875,9 @@ body{
     #tot-trick .tot-modal-body-container{
         height: auto;
         min-height: auto;
+        padding: 30px 20px;
     }
+    
 }
 @media only screen and (max-width: 544px){
     #eye-tracker{
@@ -887,19 +890,35 @@ body{
         left: -17px;
     }
     #trick-image-2 {
-        top: 67px;
+        top: 40%;
         width: 43.5%;
         right: 0;
     }
+    #trick-image-42{
+        
+    }
     #trick-image-5 {
         width: 50.5%;
-        top: 41%;
+        top: 35%;
         left: -7%;
     }
     #trick-image-16 {
-        width: 35%;
-        bottom: 24%;
-        right: 7%;
+        width: 25%;
+    bottom: 22%;
+    right: 36%;
+    }
+    #trick-image-43{
+        top: 15%;
+        left: 43%;
+        width: 21%;
+    }
+    #trick-image-23 {
+        width: 27.5%;
+        top: 2%;
+        right: 33%;
+    }
+    #trick-image-37{
+        width: 22%;
     }
     #trick-image-4 {
         width: 56%;
@@ -919,47 +938,76 @@ body{
     #trick-image-6 {
         width: 52%;
         top: 11%;
-        right: -2%;
+        right: 4%;
     }
     #trick-image-7 {
         width: 35.54%;
-        top: 61%;
-        left: -2%;
+        top: 24.5%;
+        left: -3px;
     }
     #trick-image-8 {
         width: 36%;
-        top: 64.5%;
+        top: 55.5%;
         left: -15px;
     }
     #trick-image-22 {
         width: 54.5%;
-        bottom: 0px;
+        bottom: -10px;
         left: 51%;
     }
+    #trick-image-40, #trick-image-38{
+        width: 18%;
+    }
+    #trick-image-29 {
+        /* right: 19%; */
+        left: 38%;
+        width: 26%;
+        top: 12%;
+    }
+    #trick-image-35 {
+        right: -7%;
+    width: 27%;
+    top: 29%;
+    }
     #trick-image-20 {
-        width: 56.5%;
+        width: 49.5%;
         top: 52%;
-        left: 45%;
+        left: 55%;
     }
     #trick-image-18 {
         width: 65.5%;
         bottom: 60%;
         left: 18%;
     }
+    #trick-image-42{
+        bottom: 5%;
+        left: 33%;
+        width: 20%;
+    }
+    #trick-image-36 {
+        right: 44%;
+        width: 25%;
+        top: 19%;
+    }
     #trick-image-1 {
-        width: 34.5%;
-        bottom: 8%;
+        width: 26.5%;
+        bottom: 6.5%;
         left: 2%;
     }
     #trick-image-12 {
         width: 52%;
-        top: 26%;
-        right: 15%;
+        top: 12%;
+        right: -7%;
+    }
+    #trick-image-31 {
+        right: 76%;
+        width: 23%;
+        bottom: 12%;
     }
     #trick-image-13 {
         width: 19.5%;
         top: 63%;
-        left: 39%;
+        left: 58%;
     }
     #trick-image-14 {
         width: 31%;
@@ -978,7 +1026,7 @@ body{
     }
     #trick-image-11 {
         width: 28.5%;
-        bottom: 0;
+        bottom: 1.5%;
         right: 9.5%;
     }
     #trick-image-19 {
