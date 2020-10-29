@@ -238,7 +238,8 @@ body{
   }
   #tot-trick .tot-modal-body-container{
       background-color: #f2ea79;
-      min-height: 243px;
+      /* min-height: 243px; */
+      padding: 60px 20px ;
       box-sizing: border-box;
   }
   #tot-treat .tot-modal-body-container{
