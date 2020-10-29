@@ -1007,6 +1007,23 @@
             <div class="candy-div"><img src="./assets/candy/candy-11.png" alt="" class="candy"></div>
 
         </div>
+        <div class="layer firework-layer">
+            <div class="tot-fw-img"><img src="./assets/giphy-1.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-2.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-3.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-4.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-1.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-2.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-3.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-4.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-1.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-2.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-3.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy-4.gif" alt="" srcset=""></div>
+            <div class="tot-fw-img"><img src="./assets/giphy.gif" alt="" srcset=""></div>
+        </div>
     </div>
     <div class="tot-container " id="trick-container">
         <img class="trick-image" id="trick-image-2" src="./assets/trick/trick-2.png" alt="" srcset="">
@@ -1123,12 +1140,12 @@
         function totLuckyDraw() {
             // Write your logic to call from backend here. based n the values call startTreatAnimation or  startTrickAnimation
             // Below is a code for 50% possibility
-            var num = Math.ceil(Math.random() * 10)
-            if (num > 6) {
-                startTreatAnimation()
-            } else {
-                startTrickAnimation();
-            }
+            // var num = Math.ceil(Math.random() * 10)
+            // if (num > 6) {
+            startTreatAnimation()
+            // } else {
+            //     startTrickAnimation();
+            // }
         };
         function assignImages() {
             var allCandyImages = document.querySelectorAll('.layer .candy');
@@ -1143,6 +1160,7 @@
         };
 
         var treatinterval;
+        var fireworkinterval;
         function startTreatAnimation() {
             // window.localStorage.setItem('tot-played', true);
             $('#treat-container').addClass('shown');
@@ -1174,9 +1192,27 @@
                         clearInterval(treatinterval);
                     }
                 }, 5);
+                // fireworks added
+                randomiseFireworks();
+
             }, 1000);
         }
-
+        function randomiseFireworks() {
+            setInterval(function () {
+                $('.firework-layer .tot-fw-img.show').removeClass('show');
+                fireworkinterval = setInterval(function () {
+                    var inactiveFireworks = document.querySelectorAll('.firework-layer .tot-fw-img:not(.show)');
+                    var currentIndexFw = (Math.floor(Math.random() * inactiveFireworks.length));
+                    if (inactiveFireworks[currentIndexFw]) {
+                        inactiveFireworks[currentIndexFw].style.transform = "scale(1) translate(" + (Math.floor(Math.random() * window.innerWidth)) + "px , " + (Math.floor(Math.random() * window.innerHeight)) + "px)";
+                        inactiveFireworks[currentIndexFw].classList.add('show');
+                    }
+                    if (inactiveFireworks.length == 1) {
+                        clearInterval(fireworkinterval);
+                    }
+                }, 50);
+            }, 5000);
+        }
         $("#tot-treat-form").submit(function (e) {
             console.log(this);
             e.preventDefault()

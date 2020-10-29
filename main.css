@@ -352,7 +352,22 @@ body{
 
 }
 
-
+.firework-layer{
+    z-index: 3;
+}
+.firework-layer .tot-fw-img{
+    transform:  translate(0,0);
+    width: 150px;
+    position: absolute;
+}
+.firework-layer .tot-fw-img img{
+    transform: scale(0);
+    transition: .8s;
+    width: 100%;
+}
+.firework-layer .tot-fw-img.show img{
+    transform:  scale(1)
+}
 @media only screen and (min-width: 1600px){
     .candy-div{
         width: 60px;
@@ -368,6 +383,9 @@ body{
 }
 
 @media only screen and (max-width: 767px){
+    .firework-layer .tot-fw-img{
+        width: 100px;
+    }
     .tot-modal-body p,.treat-text, .tot-modal-body .treat-text{
         font-size: 12px;
         width: 100%;
