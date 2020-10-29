@@ -1054,7 +1054,7 @@
             <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
             <img class="abs" src="./assets/trick/trick-15.png" alt="" srcset="">
         </div>
-        <div id="eye-tracker" onclick="getMeOutOfHere('trick')">
+        <div id="eye-tracker" onclick="getMeOutOfHere('trick',true)">
             <img src="./assets/trick/Gifs/eye/eye.gif" alt="" srcset="">
         </div>
     </div>
@@ -1074,7 +1074,7 @@
                         a game of Trick or Treat!</p>
                     <div class="tot-modal-buttons">
                         <button class="tot-button" onclick="totLuckyDraw()">LET’S PLAY!</button>
-                        <button class="tot-button" onclick="getMeOutOfHere('intro')">EXIT</button>
+                        <button class="tot-button" onclick="getMeOutOfHere('intro',false)">EXIT</button>
                     </div>
                 </div>
             </div>
@@ -1100,7 +1100,7 @@
         <div class="tot-modal-dialog">
             <div class="tot-modal-header">
                 <h2>Bhaane</h2>
-                <a onclick="getMeOutOfHere('treat')" class="tot-modal-cross"></a>
+                <a onclick="getMeOutOfHere('treat',false)" class="tot-modal-cross"></a>
 
             </div>
             <div class="tot-modal-body">
@@ -1241,7 +1241,7 @@
                 //    use this to send data to the backend 
                 console.log(detailsArray);
                 // close pop up after saving 
-                getMeOutOfHere('treat');
+                getMeOutOfHere('treat', true);
             }
         });
 
@@ -1305,7 +1305,7 @@
             }, speed);
         }
 
-        function getMeOutOfHere(value) {
+        function getMeOutOfHere(value, isNotify) {
             if (value === 'trick') {
                 clearInterval(eyeinterval);
                 $('#trick-container').removeClass('shown');
@@ -1320,21 +1320,24 @@
             }
             $('body').css('overflow', 'auto');
 
-            NotificationService(value);
+            NotificationService(value, isNotify);
         }
 
-        function NotificationService(type) {
+        function NotificationService(type, isNotify) {
             var message = '';
-            if (type == 'treat') {
-                message = 'Thank you for filling up your details. We will get in touch with you shortly!'
-            } else if (type == 'trick') {
-                message = 'Your suprise discount will be available at checkout!'
+            if (isNotify) {
+
+                if (type == 'treat') {
+                    message = 'Thank you for filling up your details. We will get in touch with you shortly!'
+                } else if (type == 'trick') {
+                    message = 'Your suprise discount will be available at checkout!'
+                }
+                document.querySelector('#tot-toaster-message').innerHTML = message
+                $('#tot-notification').addClass('opened')
+                setTimeout(function () {
+                    $('#tot-notification').removeClass('opened')
+                }, 8000);
             }
-            document.querySelector('#tot-toaster-message').innerHTML = message
-            $('#tot-notification').addClass('opened')
-            setTimeout(function () {
-                $('#tot-notification').removeClass('opened')
-            }, 8000);
         }
     </script>
 </body>
